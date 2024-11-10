@@ -17,3 +17,4 @@ def design():
 
         option = int(input("¿Deseas calcular nuevamente? (1 - Sí | 0 - No): "))
         os.system('clear')
+        return total, porcentaje, personas
