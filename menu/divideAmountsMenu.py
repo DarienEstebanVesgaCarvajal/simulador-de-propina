@@ -1,5 +1,5 @@
 import os
-def design():
+def desing():
     option = 1
     while option:
         print(f"""
