@@ -1,5 +1,5 @@
 def desing():
     print("""=============================================
-  ¡Gracias por usar el Simulador de Propina!
+ ¡Gracias por usar el Simulador de Propina!
 =============================================
         """)

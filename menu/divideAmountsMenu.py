@@ -4,7 +4,7 @@ import os
 
 def desing():
     option = 1
-    while option:
+    while option == 1:
         print(f"""
         =============================================
             Dividir Cuenta entre Varias Personas
@@ -17,11 +17,11 @@ def desing():
         total_con_propina = calcular_total_con_propina(total, propina)
         personas = dividir_total(total, personas)
         print(f"""=============================================
-        La propina calculada es: ${propina:.2}
-        El total a pagar es: ${total_con_propina:.2}
-        Monto por persona: ${personas:.2}
+        La propina calculada es: ${propina:.2f}
+        El total a pagar es: ${total_con_propina:.2f}
+        Monto por persona: ${personas:.2f}
         =============================================""")
 
         option = int(input("¿Deseas calcular nuevamente? (1 - Sí | 0 - No): "))
-        os.system('clear')
-        return total, porcentaje, personas
+    os.system('clear')
+    return total_con_propina, propina, personas, porcentaje
