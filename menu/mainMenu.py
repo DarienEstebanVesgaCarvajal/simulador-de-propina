@@ -1,3 +1,4 @@
+import os
 def desing():
     print(f"""
     =============================================
@@ -9,4 +10,5 @@ def desing():
     =============================================
     """)
     options = int(input("Por favor, elige una opción (1-3): "))
+    os.system('clear')
     return options
