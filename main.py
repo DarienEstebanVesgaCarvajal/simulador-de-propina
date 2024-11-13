@@ -3,15 +3,15 @@ from menu.calculateTipMenu import desing as firstOptionDesing
 from menu.divideAmountsMenu import desing as secondOptionDesing
 from menu.thanksMenu import desing as thirdOptionDesing
 
-options = principalDesing()
+userSelection = principalDesing()
 
-print(f"La opción seleccionada es {options}.")
+print(f"La opción seleccionada es {userSelection}.")
 
-if options == 1:
+if userSelection == 1:
     firstOptionDesing()
-elif options == 2:
+elif userSelection == 2:
     secondOptionDesing()
-elif options == 3:
+elif userSelection == 3:
     thirdOptionDesing()
 else:
     print("Opción inválida. Por favor, intenta de nuevo.")

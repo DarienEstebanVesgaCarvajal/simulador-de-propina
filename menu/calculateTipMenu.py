@@ -3,8 +3,8 @@ from formula.logic import calcular_propina, calcular_total_con_propina
 import os
 
 def desing():
-    option = 1
-    while option == 1:
+    repeatOption = 1
+    while repeatOption == 1:
         print(f"""
         =============================================
                     Cálculo de Propina

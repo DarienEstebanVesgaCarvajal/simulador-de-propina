@@ -9,6 +9,6 @@ def desing():
     3. Salir
     =============================================
     """)
-    options = int(input("Por favor, elige una opción (1-3): "))
+    selectedOption = int(input("Por favor, elige una opción (1-3): "))
     os.system('clear')
-    return options
+    return selectedOption
