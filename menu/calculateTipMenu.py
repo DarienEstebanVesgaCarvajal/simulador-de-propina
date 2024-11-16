@@ -4,7 +4,8 @@ import os
 
 def desing():
     repeatOption = 1
-    zeroInvalidMessage = "Error: El porcentaje de propina no puede ser negativo."
+    
+    zeroInvalidMessage = "Error: El valor no puede ser 0."
     invalidInputMessage = "Error: Por favor, ingresa un valor numérico válido."
     totalPrompt = "  Ingrese el monto total de la cuenta: $"
     percentagePrompt = "  Ingrese el porcentaje de propina (por ejemplo: 10, 15 o 20): "
