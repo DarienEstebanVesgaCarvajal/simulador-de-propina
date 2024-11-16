@@ -16,7 +16,7 @@ while True:
             thirdOptionDesing()
             break  
         else:
-            print("Opción inválida. Por favor, intenta de nuevo.")
+            print("Error: Opción inválida.")
 
     except ValueError:
-        print("Error: Debes ingresar un número válido (1-3).")
+        print("Error: Debes ingresar un número válido 1, 2 o 3.")

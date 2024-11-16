@@ -1,6 +1,7 @@
 import os
 
 def desing():
+    invalidInputMessage = "Error: Ingresa un número válido 1, 2 o 3."
     while True:
         try:
             print(f"""
@@ -18,9 +19,9 @@ def desing():
                 os.system('clear')
                 return selectedOption
             else:
-                print("Por favor, ingresa: 1, 2 o 3.")
+                print(invalidInputMessage)
         
         except ValueError:
-            print("Error: Ingresa un número válido (1-3).")
+            print(invalidInputMessage)
         except KeyboardInterrupt:
-            print("\nPor favor, usa la opción '3' para salir.")
+            print("\nPor favor, usa la opción \"3\" para salir.")
