@@ -4,7 +4,7 @@ import os
 
 def desing():
     repeatOption = 1
-
+    
     zeroInvalidMessage = "Error: El valor no puede ser 0."
     invalidInputMessage = "Error: Por favor, ingresa un valor numérico válido."
     totalPrompt = "  Ingrese el monto total de la cuenta: $"
@@ -18,7 +18,7 @@ def desing():
             =============================================
                  Dividir Cuenta entre Varias Personas
             =============================================""")
-            
+
             total = float(input(totalPrompt))
             if total <= 0:
                 print(zeroInvalidMessage)
@@ -50,15 +50,16 @@ def desing():
             print(invalidInputMessage)
             continue
 
-        try:
-            repeatOption = int(input(repeatPrompt))
-            if repeatOption not in [0, 1]:
-                print("Error: Ingresa 1 para continuar o 0 para salir.")
-                repeatOption = 1
-        except ValueError:
-            print(invalidInputMessage)
-            repeatOption = 1
-
+        while True:
+            try:
+                repeatOption = int(input(repeatPrompt))
+                if repeatOption not in [0, 1]:
+                    print("Error: Debe ingresar un número válido 1 o 0.")
+                    continue
+                break
+            except ValueError:
+                print("Error: Debe ingresar un número válido 1 o 0.")
+        
         os.system('clear')
 
     return propina, total_con_propina, monto_por_persona, repeatOption
