@@ -1,30 +1,37 @@
 import os
+from requests.databaseTipsOnly import listTips, seekTips, updateTips, deleteTips 
 
-def design():
-    invalidInputMessage = "Error: Ingresa un número válido entre 1 y 5."
 
+def desing():
     while True:
         try:
             print("""
             =============================================
-                          MENÚ DE OPERACIONES
+                   ADMINISTRACIÓN DE PROPINAS INDIVIDUALES
             =============================================
-            1. Listar propinas.
-            2. Buscar una propina específica.
-            3. Actualizar una propina.
-            4. Eliminar una propina.
-            5. Salir.
+            1. Listar propinas
+            2. Buscar propina
+            3. Actualizar propina
+            4. Eliminar propina
+            5. Atrás
             =============================================
             """)
-            selectedOption = int(input("¿Qué operación deseas realizar? (1-5): "))
+            selectedOption = int(input("Por favor, elige una opción (1-5): "))
             
-            if selectedOption in [1, 2, 3, 4, 5]:
+            if selectedOption == 1:
+                listTips()
+            elif selectedOption == 2:
+                seekTips()
+            elif selectedOption == 3:
+                updateTips()
+            elif selectedOption == 4:
+                deleteTips()
+            elif selectedOption == 5:
                 os.system('clear')
-                return selectedOption
+                break
             else:
-                print(invalidInputMessage)
-        
+                print("Error: Opción inválida.")
         except ValueError:
-            print(invalidInputMessage)
+            print("Error: Ingresa un número válido 1, 2, 3, 4 o 5.")
         except KeyboardInterrupt:
-            print(f"\nPor favor, usa la opción \"5\" para salir.")
+            print("\nPor favor, usa la opción \"5\" para salir.")

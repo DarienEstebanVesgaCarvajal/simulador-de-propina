@@ -19,6 +19,8 @@ if __name__ == "__main__":
         'totalAccount': 500,
         'percentageTip': 15,
         'calculatedTip': 75,
+        'numberPersons': 2,
+        'accountPerPerson': 287.5,
         'totalAcoundAndTip': 575
     }
     updated_tip = update_tip(resource, tip_id, data)

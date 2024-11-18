@@ -1,65 +1,25 @@
 from menu.mainMenu import desing as tipeUserSelection
-from menu.mainMenuCalculate import desing as principalDesing
-from menu.calculateTipMenu import desing as firstOptionDesing
-from menu.divideAmountsMenu import desing as secondOptionDesing
-from menu.thanksMenu import desing as thirdOptionDesing
+from menu.mainMenuCalculate import desing as calculateMenu
+from menu.mainMenuDatabases import desing as databasesMenu
+from menu.thanksMenu import desing as thanksMenu
 
-userSelection = 0
-invalidOptionMessage = "Error: Opción inválida."
-invalidInputMessage = "Error: Ingresa un número válido 1, 2 o 3."
-userSelectionMesage = f"La opción seleccionada es {userSelection}."
+def main():
+    while True:
+        try:
+            userSelection = tipeUserSelection()
+            if userSelection == 1:
+                calculateMenu()
+            elif userSelection == 2:
+                databasesMenu()
+            elif userSelection == 3:
+                thanksMenu()
+                break
+            else:
+                print("Error: Opción inválida.")
+        except ValueError:
+            print("Error: Ingresa un número válido 1, 2 o 3.")
+        except KeyboardInterrupt:
+            print("\nPor favor, usa la opción \"3\" para salir.")
 
-while True:
-
-    try:
-        
-        userSelection = tipeUserSelection()
-        print()
-
-        if userSelection == 1:
-
-            try:
-                userSelection = principalDesing()
-                print(userSelectionMesage)
-                
-                if userSelection == 1:
-                    firstOptionDesing()
-                elif userSelection == 2:
-                    secondOptionDesing()
-                elif userSelection == 3:
-                    thirdOptionDesing()
-                    break  
-                else:
-                    print(invalidOptionMessage)
-
-            except ValueError:
-                print(invalidInputMessage)
-
-        elif userSelection == 2:
-
-            try:
-                userSelection = principalDesing()
-                print(userSelectionMesage)
-                
-                if userSelection == 1:
-                    firstOptionDesing()
-                elif userSelection == 2:
-                    secondOptionDesing()
-                elif userSelection == 3:
-                    thirdOptionDesing()
-                    break  
-                else:
-                    print(invalidOptionMessage)
-
-            except ValueError:
-                print(invalidInputMessage)
-        
-        elif userSelection == 3:
-            thirdOptionDesing()
-            break
-        else:
-            print(invalidOptionMessage)
-
-
-    except ValueError:
-        print(invalidInputMessage)
+if __name__ == "__main__":
+    main()

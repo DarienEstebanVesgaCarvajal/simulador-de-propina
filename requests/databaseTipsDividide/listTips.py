@@ -1,19 +1,30 @@
-import requests
+from requests.databaseTipsOnly import listAllTips, listFilteredTips
 
-API_URL = 'https://673a2c14a3a36b5a62f0f21d.mockapi.io'
+def menuListTips():
+    while True:
+        try:
+            print("""
+            =============================================
+                       LISTAR PROPINAS
+            =============================================
+            1. Mostrar todas las propinas
+            2. Filtrar por un criterio
+            3. Atrás
+            =============================================
+            """)
+            selectedOption = int(input("Por favor, elige una opción (1-3): "))
 
-def listTips(resource):
-    try:
-        response = requests.get(f'{API_URL}/{resource}')
-        response.raise_for_status()
-        tips = response.json()
-        return tips
-    except requests.exceptions.RequestException as x:
-        print(f"Error al obtener datos: {x}")
-        return None
-
-if __name__ == "__main__":
-    resource = 'cuentas_divididas'
-    tips = listTips(resource)
-    if tips:
-        print(f"Lista de propinas: {tips}")
+            if selectedOption == 1:
+                listAllTips()  # Asume que esta función lista todas las propinas
+            elif selectedOption == 2:
+                filterValue = input("Ingrese el criterio de búsqueda (ejemplo: monto, fecha): ")
+                listFilteredTips(filterValue)  # Función para filtrar propinas según el criterio
+            elif selectedOption == 3:
+                print("Regresando al menú anterior...")
+                break
+            else:
+                print("Error: Opción inválida. Por favor elige 1, 2 o 3.")
+        except ValueError:
+            print("Error: Ingresa un número válido 1, 2 o 3.")
+        except KeyboardInterrupt:
+            print("\nPor favor, usa la opción \"3\" para regresar.")
