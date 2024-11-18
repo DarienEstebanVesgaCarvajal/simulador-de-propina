@@ -1,21 +1,22 @@
 import os
 
-def desing():
-    invalidInputMessage = "Error: Ingresa un número válido 1, 2, 3, 4 o 5."
+def design():
+    invalidInputMessage = "Error: Ingresa un número válido entre 1 y 5."
+
     while True:
         try:
-            print(f"""
+            print("""
             =============================================
-                        OPERACIÓN A REALIZAR
+                          MENÚ DE OPERACIONES
             =============================================
-            1. Listar.
-            2. Buscar una Específica.
-            3. Actualizar.
-            4. Eliminar.
-            5. Salir
+            1. Listar propinas.
+            2. Buscar una propina específica.
+            3. Actualizar una propina.
+            4. Eliminar una propina.
+            5. Salir.
             =============================================
             """)
-            selectedOption = int(input("Por favor, elige una opción (1-5): "))
+            selectedOption = int(input("¿Qué operación deseas realizar? (1-5): "))
             
             if selectedOption in [1, 2, 3, 4, 5]:
                 os.system('clear')
@@ -26,4 +27,4 @@ def desing():
         except ValueError:
             print(invalidInputMessage)
         except KeyboardInterrupt:
-            print("\nPor favor, usa la opción \"5\" para salir.")
+            print(f"\nPor favor, usa la opción \"5\" para salir.")
