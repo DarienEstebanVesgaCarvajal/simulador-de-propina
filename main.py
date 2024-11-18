@@ -1,6 +1,6 @@
 from menu.mainMenu import desing as tipeUserSelection
 from menu.mainMenuCalculate import desing as calculateMenu
-from menu.mainMenuDatabases import desing as databasesMenu
+# from menu.mainMenuDatabases import desing as databasesMenu
 from menu.thanksMenu import desing as thanksMenu
 
 def main():
@@ -10,7 +10,8 @@ def main():
             if userSelection == 1:
                 calculateMenu()
             elif userSelection == 2:
-                databasesMenu()
+                print("Trabajo en mantenimiento.")
+                # databasesMenu()
             elif userSelection == 3:
                 thanksMenu()
                 break
@@ -20,6 +21,3 @@ def main():
             print("Error: Ingresa un número válido 1, 2 o 3.")
         except KeyboardInterrupt:
             print("\nPor favor, usa la opción \"3\" para salir.")
-
-if __name__ == "__main__":
-    main()

@@ -1,26 +1,23 @@
-import requests
+from formula.tipsLogic import updateTips
 
-API_URL = 'https://673a2c14a3a36b5a62f0f21d.mockapi.io'
-
-def update_tip(resource, tip_id, data):
-    try:
-        response = requests.put(f'{API_URL}/{resource}/{tip_id}', json=data)
-        response.raise_for_status()
-        updated_tip = response.json()
-        return updated_tip
-    except requests.exceptions.RequestException as e:
-        print(f"Error al actualizar los datos: {e}")
-        return None
-
-if __name__ == "__main__":
-    resource = 'calcular_propinas'
-    tip_id = '1'
-    data = {
-        'totalAccount': 500,
-        'percentageTip': 15,
-        'calculatedTip': 75,
-        'totalAcoundAndTip': 575
-    }
-    updated_tip = update_tip(resource, tip_id, data)
-    if updated_tip:
-        print(f"Propina actualizada: {updated_tip}")
+def menuUpdateTips():
+    while True:
+        try:
+            print("""
+            =============================================
+                       ACTUALIZAR UNA PROPINA POR ID
+            =============================================
+            """)
+            tipId = input("Ingrese el ID de la propina que desea actualizar: ")
+            newAmount = input("Ingrese el nuevo monto de la propina: ")
+            updateTips(tipId, newAmount)
+            print("=============================================")
+            
+            selectedOption = input("Presiona '0' para regresar: ")
+            if selectedOption == "0":
+                print("Regresando al menú anterior...")
+                break
+            else:
+                print("Error: Ingresa '0' para regresar.")
+        except KeyboardInterrupt:
+            print("\nPor favor, usa '0' para regresar.")

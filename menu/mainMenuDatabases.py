@@ -1,13 +1,13 @@
 import os
 from requests.tipsOnlyMenu import desing as tipsOnly
-from requests.tipsDivideMenu import desing as tipsDivide
+# from requests.tipsDivideMenu import desing as tipsDivide
 
 def desing():
     while True:
         try:
             print("""
             =============================================
-                        MENÚ DE BASES DE DATOS
+                       MENÚ DE BASES DE DATOS
             =============================================
             1. Administrar propinas individuales
             2. Administrar propinas divididas

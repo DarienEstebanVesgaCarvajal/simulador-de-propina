@@ -1,20 +1,22 @@
-import requests
+from formula.tipsLogic import seekTips
 
-API_URL = 'https://673a2c14a3a36b5a62f0f21d.mockapi.io'
-
-def seek_tip(resource, tip_id):
-    try:
-        response = requests.get(f'{API_URL}/{resource}/{tip_id}')
-        response.raise_for_status()
-        tip = response.json()
-        return tip
-    except requests.exceptions.RequestException as e:
-        print(f"Error al obtener datos: {e}")
-        return None
-
-if __name__ == "__main__":
-    resource = 'cuentas_divididas'
-    tip_id = '1'
-    tip = seek_tip(resource, tip_id)
-    if tip:
-        print(f"Propina encontrada: {tip}")
+def menuSeekTips():
+    while True:
+        try:
+            print("""
+            =============================================
+                        BUSCAR UNA PROPINA POR ID
+            =============================================
+            """)
+            tipId = input("Ingrese el ID de la propina que desea buscar: ")
+            seekTips(tipId)
+            print("=============================================")
+            
+            selectedOption = input("Presiona '0' para regresar: ")
+            if selectedOption == "0":
+                print("Regresando al menú anterior...")
+                break
+            else:
+                print("Error: Ingresa '0' para regresar.")
+        except KeyboardInterrupt:
+            print("\nPor favor, usa '0' para regresar.")
