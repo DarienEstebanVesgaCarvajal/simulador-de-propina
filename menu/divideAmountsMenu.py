@@ -7,6 +7,7 @@ def desing():
     
     zeroInvalidMessage = "Error: El valor no puede ser 0."
     invalidInputMessage = "Error: Por favor, ingresa un valor numérico válido."
+    invalidNumberMessage = "Error: Debe ingresar un número válido 1 o 0."
     totalPrompt = "  Ingrese el monto total de la cuenta: $"
     percentagePrompt = "  Ingrese el porcentaje de propina (por ejemplo: 10, 15 o 20): "
     peoplePrompt = "  Ingrese el número de personas: "
@@ -54,11 +55,11 @@ def desing():
             try:
                 repeatOption = int(input(repeatPrompt))
                 if repeatOption not in [0, 1]:
-                    print("Error: Debe ingresar un número válido 1 o 0.")
+                    print(invalidNumberMessage)
                     continue
                 break
             except ValueError:
-                print("Error: Debe ingresar un número válido 1 o 0.")
+                print(invalidNumberMessage)
         
         os.system('clear')
 

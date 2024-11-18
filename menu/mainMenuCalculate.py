@@ -6,10 +6,10 @@ def desing():
         try:
             print(f"""
             =============================================
-                         SELECCIÓN DE USER
+                        SIMULADOR DE PROPINA
             =============================================
-            1. Clientela.
-            2. Administración.
+            1. Calcular propina y total a pagar
+            2. Calcular total a pagar dividido entre varias personas
             3. Salir
             =============================================
             """)
