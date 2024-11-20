@@ -19,7 +19,8 @@ def desing():
             if selectedOption == 1:
                 tipsOnly()
             elif selectedOption == 2:
-                tipsDivide()
+                # tipsDivide()
+                print("")
             elif selectedOption == 3:
                 os.system('clear')
                 break

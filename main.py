@@ -21,3 +21,6 @@ def main():
             print("Error: Ingresa un número válido 1, 2 o 3.")
         except KeyboardInterrupt:
             print("\nPor favor, usa la opción \"3\" para salir.")
+            
+if __name__ == "__main__":
+    main()

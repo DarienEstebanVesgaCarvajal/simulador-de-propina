@@ -1,5 +1,5 @@
 invalidInputMessage = "Error: Por favor, ingresa un valor numérico válido."
-teapotProblemMessage = "Error: soy una tetera."
+teapotProblemMessage = "Error: Soy una tetera."
 
 def calcular_propina(total, porcentaje):  
     try:
